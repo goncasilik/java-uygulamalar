@@ -10,7 +10,9 @@ public class HesapMakinesi {
 		System.out.println("(4) Bölme Ýþlemi ");
 		System.out.println("(5) Karekök Hesapla ");
 		System.out.println("(6) Cikis Yap ");
-		System.out.print("Yapmak istediðiniz iþlem için bir numara seçin: ");
+		Boolean anahtar = true;
+		while (anahtar) {
+		System.out.print("Yapmak istediðiniz iþlem için bir numara seçin (Çýkmak için (6)) : ");
 		Integer islemNumarasi = okuma.nextInt();
 			if (islemNumarasi == 1) {
 				topla(okuma);
@@ -28,11 +30,14 @@ public class HesapMakinesi {
 				karekok(okuma);
 			}
 			else if (islemNumarasi == 6) {
+				anahtar = false;
+				System.out.print("Program Sonlandýrýldý.");			
 			}
 			else {
 				System.out.println("Lütfen yukarýda sýralanan numaralardan birini seçiniz!");
 			}
 		}
+	}
 	
 	private static void topla(Scanner okuma) {
 		System.out.print("Toplama iþlemi için birnci sayýyý giriniz: ");
